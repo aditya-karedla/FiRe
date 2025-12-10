@@ -1,0 +1,39 @@
+---
+config:
+  flowchart:
+    curve: linear
+---
+graph TD;
+	__start__([<p>__start__</p>]):::first
+	load_tickers(load_tickers)
+	match(match)
+	validate(validate)
+	resolve(resolve)
+	mark_progress(mark_progress)
+	initial_data(initial_data)
+	financials(financials)
+	deep_research(deep_research)
+	synthesis(synthesis)
+	report(report)
+	mark_complete(mark_complete)
+	__end__([<p>__end__</p>]):::last
+	__start__ --> load_tickers;
+	deep_research --> synthesis;
+	financials --> deep_research;
+	initial_data --> financials;
+	load_tickers -. &nbsp;skip_match&nbsp; .-> mark_progress;
+	load_tickers -. &nbsp;needs_match&nbsp; .-> match;
+	mark_progress --> initial_data;
+	match -. &nbsp;end&nbsp; .-> __end__;
+	match -. &nbsp;data_collection&nbsp; .-> mark_progress;
+	match -.-> validate;
+	report --> mark_complete;
+	resolve -. &nbsp;end&nbsp; .-> __end__;
+	resolve -. &nbsp;data_collection&nbsp; .-> mark_progress;
+	synthesis --> report;
+	validate -. &nbsp;data_collection&nbsp; .-> mark_progress;
+	validate -.-> resolve;
+	mark_complete --> __end__;
+	classDef default fill:#f2f0ff,line-height:1.2
+	classDef first fill-opacity:0
+	classDef last fill:#bfb6fc

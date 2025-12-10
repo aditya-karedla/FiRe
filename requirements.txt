@@ -1,0 +1,45 @@
+# Core orchestration framework
+langgraph>=0.2.0
+langgraph-checkpoint-sqlite>=0.0.9
+langchain>=0.1.0
+langchain-core>=0.1.0
+langchain-community>=0.0.20
+
+# State management and validation
+pydantic>=2.5.0
+
+# Google Gemini LLM via LangChain
+langchain-google-genai>=1.0.0
+
+# Web research and scraping
+tavily-python
+duckduckgo-search
+beautifulsoup4
+html2text
+lxml
+
+# SEC API and HTTP
+requests
+aiohttp
+httpx
+
+# Streamlit UI
+streamlit
+plotly
+pandas
+
+# Utilities
+python-dotenv
+python-dateutil
+tiktoken
+tenacity
+fpdf2
+
+# Checkpointing
+aiosqlite
+
+# Development tools
+pytest
+pytest-asyncio
+black
+ruff
